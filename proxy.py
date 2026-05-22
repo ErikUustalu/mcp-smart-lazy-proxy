@@ -3,6 +3,7 @@ import asyncio
 import logging
 import os
 import time
+import watchfiles
 
 from fastmcp import Client
 from collections import defaultdict
@@ -26,13 +27,8 @@ class Proxy:
             asyncio.create_task(self.auto_reload())
 
     async def auto_reload(self):
-        last_modified = os.path.getmtime(self.config_path)
-        while True:
-            current_modified = os.path.getmtime(self.config_path)
-            if current_modified != last_modified:
-                await self.load_config()
-                last_modified = current_modified
-            await asyncio.sleep(self.check_interval)
+        async for _ in watchfiles.awatch(self.config_dir):
+            await self.load_config()
 
     async def load_config(self):
         with open(self.config_path, "r") as f:
