@@ -94,7 +94,10 @@ class Proxy:
             return self.tools[tool_name]["tool"]
         
     async def get_skill(self, tool_name):
-        return self.tools[tool_name]["skill"]
+        if tool_name not in self.tools:
+            return f"Tool '{tool_name}' not found"
+        else:
+            return self.tools[tool_name]["skill"]
         
     async def call_tool(self, tool_name, args):
         if tool_name not in self.tools:
