@@ -133,7 +133,7 @@ class Proxy:
 
         if return_description:
             for tool in tools:
-                matches.append(str(self.tools[tool]["tool"]))
+                matches.append(str(await self.describe_tool(tool)))
         else:
             matches = tools
             
