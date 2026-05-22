@@ -25,7 +25,7 @@ async def list_tools() -> str:
 @mcp.tool()
 async def describe_tool(tool_name: str) -> str:
     """Describe a tool in detail"""
-    return str(await proxy.describe_tool(tool_name))
+    return await proxy.describe_tool(tool_name)
 
 @mcp.tool()
 async def call_tool(tool_name: str, args: dict) -> str:
