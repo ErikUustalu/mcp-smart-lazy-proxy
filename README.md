@@ -6,6 +6,7 @@ A lightweight context efficient proxy for MCP servers. Designed to reduce token 
 - **Lazy loading:** Only fetch and provide the tools list and schemas when the model actually needs them
 - **Easy to configure:** Configured with a simple config.json file
 - **Lightweight:** Minimal overhead and no bloated features
+- **Custom instructions for tools:** Configure custom instructions for tools that the model only sees when looking at the tool
 
 ## Why did I make this
 Most standard MCP setups inject all avaliable MCP tool schemas to the model's context. For projects with many tools or general-use chatbots with many features this consumes tens of thousends of unnecessary tokens. MCP lazy proxy acts as a gateway that only gives the model a minimal interface for using the tools while still keeping the full functionality.
