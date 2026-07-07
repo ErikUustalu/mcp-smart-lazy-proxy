@@ -34,5 +34,12 @@ Most standard MCP setups inject all avaliable MCP tool schemas to the model's co
    docker compose up -d
    ```
 
+### Setting up skills (custom tool instructions)
+1. **Create the skills folder**
+   mkdir config/skills
+2. **Create skill markdown files**
+   nano example.md
+   Gets added to the tool description of a tool that has the skill name in it
+
 ## License
 MIT
