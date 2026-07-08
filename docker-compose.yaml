@@ -1,6 +1,6 @@
 services:
   mcp-lazy-proxy:
-    image: ghcr.io/erikuustalu/mcp-lazy-proxy:latest
+    image: ghcr.io/erikuustalu/mcp-smart-lazy-proxy:latest
     ports:
       - "8080:8080"
     restart: unless-stopped
