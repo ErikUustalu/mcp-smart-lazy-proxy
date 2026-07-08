@@ -15,7 +15,7 @@ Most standard MCP setups inject all avaliable MCP tool schemas to the model's co
 ### CLI
 1. **Clone the repo**
    ```
-   git clone https://github.com/ErikUustalu/mcp-lazy-proxy
+   git clone https://github.com/ErikUustalu/mcp-smart-lazy-proxy
    cd mcp-lazy-proxy
 2. **Configure your servers**
    Rename the config/config.json.example to config.json and add your servers
